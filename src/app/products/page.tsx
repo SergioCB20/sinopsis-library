@@ -1,14 +1,23 @@
 "use client";
-import { useState, useMemo } from "react";
+
+import { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import ItemCard from "@/components/ui/ItemCard";
 import { Book, RelatedProduct } from "@/lib/types";
 import { books, relatedProducts } from "@/lib/data";
 
 export default function ProductsPage() {
+  return (
+    <Suspense fallback={<div className="text-center">Cargando productos...</div>}>
+      <ProductsContent />
+    </Suspense>
+  );
+}
+
+function ProductsContent() {
   const searchParams = useSearchParams();
   const search = searchParams.get("search")?.toLowerCase() || ""; // Obtiene el parámetro `search`
-  
+
   const [filter, setFilter] = useState("all");
   const [sort, setSort] = useState("name");
 
