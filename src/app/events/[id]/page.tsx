@@ -21,7 +21,7 @@ export default function EventPage() {
   }
 
   const googleFormUrl = "https://forms.google.com/tu-formulario"; // Reemplaza con tu enlace de Google Forms
-  const whatsappNumber = "549123456789"; // Reemplaza con el número de WhatsApp sin "+"
+  const whatsappNumber = "+51970857296"; // Reemplaza con el número de WhatsApp sin "+"
   const message = encodeURIComponent(
     `Hola, me gustaría obtener más información sobre el evento: ${event.name}`
   );
